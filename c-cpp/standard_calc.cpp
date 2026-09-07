@@ -14,10 +14,12 @@
  * @return float: The bounded angle in degrees.
  */
 float bound_to_180(float angle) {
-    float boundedAngle = fmod(angle,360.0); //writes the angle as a positive number >= 0 && < 360
+    float boundedAngle = fmod(angle,360.0); //writes the angle as a number between (-360,360)
 
     if (boundedAngle >= 180){
         boundedAngle = (boundedAngle - 360.0);
+    } else if (boundedAngle < -180){
+        boundedAngle = (boundedAngle + 360.0);
     }
 
     return boundedAngle;
