@@ -13,7 +13,7 @@
  * @return float: The bounded angle in degrees.
  */
 float bound_to_180(float angle) {
-    boundedAngle = angle%360.0; //writes the angle as a positive number >= 0 && < 360
+    float boundedAngle = angle%360.0; //writes the angle as a positive number >= 0 && < 360
 
     if (boundedAngle >= 180){
         boundedAngle = (boundedAngle - 360.0);
@@ -40,12 +40,12 @@ bool is_angle_between(float first_angle, float middle_angle, float second_angle)
     middle_angle = bound_to_180(middle_angle);
     second_angle = bound_to_180(second_angle);
 
-    float high_angle = max(first_angle, second_angle);
-    float low_angle = min(first_angle, second_angle);
+    float high_angle = fmax(first_angle, second_angle);
+    float low_angle = fmin(first_angle, second_angle);
 
     if ((high_angle-low_angle)<=180){
         return (low_angle<=middle_angle && middle_angle<=high_angle);
-    } else if ((high_angle-low_angle)<=180){
+    } else if ((high_angle-low_angle)>180){
         return !(low_angle<=middle_angle && middle_angle<=high_angle);
     }
 }
