@@ -14,6 +14,7 @@
  * @return float: The bounded angle in degrees.
  */
 float bound_to_180(float angle) {
+
     float boundedAngle = fmod(angle,360.0); //writes the angle as a number between (-360,360)
 
     if (boundedAngle >= 180){
@@ -43,7 +44,7 @@ bool is_angle_between(float first_angle, float middle_angle, float second_angle)
     middle_angle = bound_to_180(middle_angle);
     second_angle = bound_to_180(second_angle);
 
-    float high_angle = fmax(first_angle, second_angle);
+    float high_angle = fmax(first_angle, second_angle); //sort by high and low angles to simplify later calculations
     float low_angle = fmin(first_angle, second_angle);
 
     if ((high_angle-low_angle)<=180){
