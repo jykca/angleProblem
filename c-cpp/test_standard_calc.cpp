@@ -20,6 +20,7 @@ void test_between_basic1(CuTest *tc) {
     CuAssertFalse(tc, is_angle_between(0, 180, 90));
     CuAssertTrue(tc, is_angle_between(0, 180, 180));
     CuAssertTrue(tc, is_angle_between(-360, 45, 427));
+    CuAssertTrue(tc, is_angle_between(0,0,0));
 }
 
 int main(int argc, char const *argv[]) {
