@@ -1,5 +1,6 @@
 #include "stdbool.h"
 #include "standard_calc.h"
+#include <math.h>
 
 /**
  * @brief Bounds the provided angle between [-180, 180) degrees.
@@ -13,7 +14,7 @@
  * @return float: The bounded angle in degrees.
  */
 float bound_to_180(float angle) {
-    float boundedAngle = angle%360.0; //writes the angle as a positive number >= 0 && < 360
+    float boundedAngle = fmod(angle,360.0); //writes the angle as a positive number >= 0 && < 360
 
     if (boundedAngle >= 180){
         boundedAngle = (boundedAngle - 360.0);
@@ -48,4 +49,6 @@ bool is_angle_between(float first_angle, float middle_angle, float second_angle)
     } else if ((high_angle-low_angle)>180){
         return !(low_angle<=middle_angle && middle_angle<=high_angle);
     }
+
+    return;
 }
