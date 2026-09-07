@@ -13,12 +13,12 @@
  * @return float: The bounded angle in degrees.
  */
 float bound_to_180(float angle) {
-    boundedAngle = angle%360; //writes the angle as a positive number >= 0 && < 360
+    boundedAngle = angle%360.0; //writes the angle as a positive number >= 0 && < 360
 
     if (boundedAngle >= 180){
-        boundedAngle = (boundedAngle - 360);
+        boundedAngle = (boundedAngle - 360.0);
     }
-    
+
     return boundedAngle;
 }
 
