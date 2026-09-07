@@ -16,8 +16,8 @@ void test_bound_basic1(CuTest *tc) {
 void test_between_basic1(CuTest *tc) {
     CuAssertTrue(tc, is_angle_between(0, 1, 2));
     CuAssertTrue(tc, is_angle_between(0, 45, 67));
-    CuAssertFalse(tc, is_angle_between(0, 100, 67));
-    CuAssertFalse(tc, is_angle_between(0, 180, 90));
+    CuAssertTrue(tc, !is_angle_between(0, 100, 67));
+    CuAssertTrue(tc, !is_angle_between(0, 180, 90));
     CuAssertTrue(tc, is_angle_between(0, 180, 180));
     CuAssertTrue(tc, is_angle_between(-360, 45, 427));
     CuAssertTrue(tc, is_angle_between(0,0,0));
