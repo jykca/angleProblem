@@ -46,9 +46,7 @@ bool is_angle_between(float first_angle, float middle_angle, float second_angle)
 
     if ((high_angle-low_angle)<=180){
         return (low_angle<=middle_angle && middle_angle<=high_angle);
-    } else if ((high_angle-low_angle)>180){
+    } else {
         return !(low_angle<=middle_angle && middle_angle<=high_angle);
     }
-
-    return;
 }
